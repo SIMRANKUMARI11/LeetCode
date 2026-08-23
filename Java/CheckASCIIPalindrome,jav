@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isPalindromic(String s) {
+        String combinedBinary="";
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            int asciiValue=(int) ch;
+            String binaryStr=Integer.toBinaryString(asciiValue);
+            while(binaryStr.length() < 8){
+                binaryStr="0"+binaryStr;
+            }
+            combinedBinary=combinedBinary+binaryStr;
+        }
+        int start=0;
+        int end=combinedBinary.length()-1;
+        while(start<end){
+            if(combinedBinary.charAt(start)!= combinedBinary.charAt(end)){
+                return false;
+            }
+            start++;
+            end--;
+            
+        }
+        return true;
+    }
+}
