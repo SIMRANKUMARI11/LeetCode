@@ -17,7 +17,6 @@ class Solution {
 
         return new String(a);
     }
-
     private boolean isVowel(char c) {
         return "aeiouAEIOU".indexOf(c) != -1;
     }
